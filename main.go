@@ -7,23 +7,21 @@ import (
 )
 
 func main() {
-	imgPath := "/home/caio_tavares/Documents/github/imagego/assets/subaru.jpeg"
+	imgPath := "assets/subaru.jpeg"
 	img, err := handler.OpenImage(imgPath)
 	if err != nil {
 		fmt.Println("Error opening image:", err)
 		return
 	}
 
-	pixels, err := handler.ImageTensor(img)
+	pixels, err := handler.ImageToTensor(img)
 	if err != nil {
 		fmt.Println("Erro no imageTensor:", err)
 		return
 	}
 
-	for i := 0; i < len(pixels); i++ {
-		for j := 0; j < len(pixels); j++ {
-		}
-	}
+	newImg, err := handler.TensorToImage(pixels)
+	handler.SaveImage(newImg, "assets/edited_subaru.jpeg")
 
 	fmt.Println("Image opened successfully")
 	fmt.Println(img.Bounds().Size())
