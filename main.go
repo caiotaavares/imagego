@@ -20,7 +20,10 @@ func main() {
 		return
 	}
 
+	pixels, err = handler.UpsideDown(pixels)
+
 	newImg, err := handler.TensorToImage(pixels)
+
 	handler.SaveImage(newImg, "assets/edited_subaru.jpeg")
 
 	fmt.Println("Image opened successfully")
