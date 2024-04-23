@@ -1,4 +1,4 @@
-package image
+package imageMan
 
 import (
 	"errors"

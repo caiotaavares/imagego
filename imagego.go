@@ -1,7 +1,7 @@
-package imagego
+package main
 
 func main() {
-	img, err := image.openImage("/home/caio_tavares/Documents/github/imageGo/assets/subaru.jpeg")
+	img, err := imageMan.openImage("/home/caio_tavares/Documents/github/imageGo/assets/subaru.jpeg")
 	if err != nil {
 		return
 	}
